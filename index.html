@@ -1,411 +1,310 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>For My Baby Krish ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Krish ❤️</title>
 
 <style>
-:root {
---pink:#ffe5ed;
---rose:#e87596;
---wine:#762b49;
---cream:#fff9f4;
---gold:#d8ad68;
+* {
+    box-sizing: border-box;
 }
 
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
 body {
-margin:0;
-background:var(--cream);
-color:var(--wine);
-font-family:Georgia,serif;
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    color: #4a1830;
+    background: linear-gradient(135deg, #ffe3ee, #fff8fb, #ffd6e8);
+    overflow-x: hidden;
 }
-button,input { font:inherit; }
-button { cursor:pointer; }
-.hidden { display:none!important; }
 
-#lockscreen {
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:24px;
-text-align:center;
-position:relative;
-overflow:hidden;
-background:radial-gradient(circle at top,#fff9f9,#f9dce7 55%,#eebaca);
+/* BUTTONS */
+
+button {
+    cursor: pointer;
+    font: inherit;
+}
+
+.primary {
+    border: none;
+    color: white;
+    background: linear-gradient(135deg, #ff4f87, #d92f70);
+    border-radius: 50px;
+    padding: 13px 25px;
+    box-shadow: 0 8px 20px rgba(217,47,112,0.25);
+    transition: transform 0.2s;
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+}
+
+/* PASSWORD SCREEN */
+
+#lockScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffb8d3, #fff0f6);
+    text-align: center;
 }
 
 .lock-card {
-width:min(420px,100%);
-padding:36px 25px;
-border:1px solid #fff;
-border-radius:28px;
-background:#fff9f1ef;
-box-shadow:0 18px 60px #8c31521c;
-position:relative;
-z-index:1;
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 25px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 28px;
+    box-shadow: 0 18px 55px rgba(126,23,71,0.15);
 }
 
-.lock-icon {
-font-size:65px;
-animation:float 2.5s ease-in-out infinite;
+.lock-card h1 {
+    font-size: 2.2rem;
 }
 
-.kicker {
-letter-spacing:4px;
-font:11px Arial,sans-serif;
-text-transform:uppercase;
+.lock-card p {
+    line-height: 1.7;
 }
 
-h1 {
-font-weight:normal;
-font-size:clamp(38px,9vw,62px);
-margin:16px 0;
+.lock-card input {
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0;
+    border: 1px solid #f3a5c4;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 1rem;
 }
 
-h2 {
-font-size:clamp(30px,6vw,43px);
-font-weight:normal;
-margin:12px 0;
+#error {
+    color: #c2185b;
+    margin: 10px;
+    min-height: 22px;
 }
 
-p { line-height:1.8; }
+/* MAIN WEBSITE */
 
-input {
-width:100%;
-padding:15px;
-border:1px solid #e7b9c8;
-border-radius:14px;
-background:white;
-color:var(--wine);
-outline:none;
-text-align:center;
-margin:12px 0;
-font-size:17px;
-letter-spacing:2px;
+main {
+    display: none;
 }
 
-input:focus {
-border-color:var(--rose);
-box-shadow:0 0 0 3px #e8759622;
+main.show {
+    display: block;
 }
 
-.btn {
-display:inline-block;
-padding:14px 25px;
-border:0;
-border-radius:30px;
-background:var(--wine);
-color:white;
-text-decoration:none;
-box-shadow:0 5px 15px #762b4922;
-transition:.2s;
-}
-
-.btn:hover {
-transform:translateY(-2px);
-background:#923956;
-}
-
-#feedback {
-color:#b33359;
-min-height:24px;
-font-size:14px;
-}
-
-.float-heart {
-position:absolute;
-bottom:-40px;
-opacity:.55;
-animation:rise 9s linear infinite;
-}
-
-@keyframes rise {
-to {
-transform:translateY(-115vh) rotate(35deg);
-opacity:0;
-}
-}
-
-@keyframes float {
-50% { transform:translateY(-8px) rotate(-4deg); }
-}
-
-#site { overflow:hidden; }
+/* HERO */
 
 .hero {
-min-height:95vh;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:50px 20px;
-background:linear-gradient(145deg,#f9dce6,#fff8f0 55%,#f2cbd8);
-position:relative;
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
 }
 
-.hero .big-heart {
-font-size:35px;
-color:#cf5479;
+.hero-content {
+    max-width: 850px;
 }
 
-.hero p { max-width:570px; }
-
-.tag {
-letter-spacing:3px;
-text-transform:uppercase;
-font:11px Arial,sans-serif;
+.eyebrow {
+    display: inline-block;
+    padding: 8px 15px;
+    background: white;
+    border-radius: 50px;
+    font-size: 0.8rem;
 }
 
 .hero h1 {
-color:var(--wine);
-text-shadow:2px 3px #fff;
+    font-size: clamp(2.8rem, 9vw, 5.8rem);
+    line-height: 1.1;
+    color: #7b1747;
 }
 
-.sparkle { color:var(--gold); }
+.hero h1 span {
+    color: #ff4f87;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.heart {
+    display: inline-block;
+    animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* SECTIONS */
 
 section {
-max-width:1080px;
-margin:auto;
-padding:70px 20px;
+    padding: 65px 20px;
 }
 
-.heading {
-text-align:center;
-margin-bottom:35px;
+.section-inner {
+    max-width: 1050px;
+    margin: auto;
 }
 
-.soft { color:#a46d7f; }
+.section-title {
+    text-align: center;
+    color: #7b1747;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: 15px;
+}
 
-.cake-area {
-background:linear-gradient(150deg,#fff2f5,#f8dce5);
-border-radius:28px;
-padding:35px 12px;
-text-align:center;
-box-shadow:0 10px 35px #762b4910;
+.section-subtitle {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 35px;
+    line-height: 1.8;
+}
+
+/* BIRTHDAY CAKE */
+
+.cake-wrap {
+    text-align: center;
 }
 
 .cake {
-position:relative;
-width:220px;
-height:195px;
-margin:35px auto 20px;
+    font-size: clamp(5rem, 20vw, 9rem);
+    margin: 20px;
 }
 
-.candle {
-position:absolute;
-top:0;
-left:105px;
-width:10px;
-height:45px;
-background:repeating-linear-gradient(45deg,#fff 0 7px,#e87596 7px 13px);
-border-radius:3px;
-z-index:3;
+.wish {
+    max-width: 700px;
+    margin: 25px auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #7b1747;
 }
 
-.flame {
-position:absolute;
-top:-25px;
-left:-3px;
-width:16px;
-height:24px;
-background:radial-gradient(ellipse at 50% 70%,#fff6ad 0 18%,#ffb23f 45%,#f05b40 75%);
-border-radius:50% 50% 45% 45%;
-animation:flicker .45s infinite alternate;
-filter:drop-shadow(0 0 8px #ffb23f);
-}
-
-@keyframes flicker {
-to { transform:scale(.8) rotate(5deg); }
-}
-
-.layer {
-position:absolute;
-left:10px;
-width:200px;
-border-radius:12px 12px 8px 8px;
-}
-
-.layer-top {
-top:48px;
-height:45px;
-background:#fff5f1;
-border-bottom:7px dotted #e87596;
-z-index:2;
-}
-
-.layer-mid {
-top:87px;
-height:49px;
-background:#e87596;
-border-bottom:8px solid #d9577c;
-}
-
-.layer-bottom {
-top:130px;
-height:45px;
-background:#f5c2d0;
-border-bottom:8px solid #d88da4;
-}
-
-.icing {
-position:absolute;
-top:70px;
-left:10px;
-width:200px;
-height:17px;
-background:#fff5f1;
-border-radius:0 0 14px 14px;
-z-index:2;
-}
-
-.cake-heart {
-position:absolute;
-z-index:4;
-top:95px;
-left:86px;
-font-size:30px;
-color:white;
-}
-
-.cake-cut { margin-top:15px; }
-
-#birthday-message {
-font-size:18px;
-min-height:55px;
-}
+/* PHOTO GALLERY */
 
 .gallery {
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));
-gap:26px;
-align-items:start;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
 }
 
-.memory {
-background:#fff;
-padding:11px 11px 20px;
-border:1px solid #f2dce3;
-box-shadow:0 9px 25px #762b4915;
-transform:rotate(-1deg);
-transition:transform .25s;
+.photo {
+    background: white;
+    padding: 9px 9px 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(123,23,71,0.1);
+    transition: transform 0.3s;
 }
 
-.memory:nth-child(even) { transform:rotate(1.4deg); }
-
-.memory:hover {
-transform:rotate(0) translateY(-5px);
+.photo:nth-child(even) {
+    transform: rotate(1.5deg);
 }
 
-.memory img {
-width:100%;
-height:290px;
-object-fit:cover;
-display:block;
-background:var(--pink);
+.photo:hover {
+    transform: rotate(0deg) scale(1.04);
 }
 
-.caption {
-text-align:center;
-line-height:1.6;
-padding:17px 4px 0;
+.photo img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 9px;
+    display: block;
+    background: #ffe3ee;
 }
 
-.caption small {
-display:block;
-font:10px Arial,sans-serif;
-letter-spacing:2px;
-color:#bd7a8e;
-margin-bottom:7px;
+.photo figcaption {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 0.9rem;
 }
 
-.letter {
-max-width:720px;
-margin:auto;
-padding:clamp(25px,6vw,55px);
-border-radius:22px;
-background:#fae7ec;
-text-align:center;
-line-height:2;
-font-size:17px;
-white-space:pre-line;
+/* LOVE LETTER */
+
+.letter-card {
+    max-width: 780px;
+    margin: auto;
+    padding: 35px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 25px;
+    box-shadow: 0 12px 35px rgba(123,23,71,0.09);
+    line-height: 2;
+    white-space: pre-line;
 }
+
+/* MUSIC BUTTON */
+
+.music-control {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 5;
+    border: 1px solid white;
+    border-radius: 50px;
+    padding: 11px 16px;
+    background: rgba(255,255,255,0.9);
+    color: #7b1747;
+    box-shadow: 0 5px 20px rgba(123,23,71,0.15);
+}
+
+/* FOOTER */
 
 footer {
-text-align:center;
-padding:40px 15px 55px;
-background:#f6dce5;
-line-height:1.9;
+    text-align: center;
+    padding: 35px 20px 50px;
+    color: #8a4765;
 }
 
-footer strong {
-font-size:25px;
-font-weight:normal;
-}
+/* CONFETTI */
 
 .confetti {
-position:fixed;
-top:-20px;
-z-index:9;
-pointer-events:none;
-animation:fall 4s linear forwards;
+    position: fixed;
+    top: -15px;
+    width: 9px;
+    height: 14px;
+    z-index: 20;
+    pointer-events: none;
+    animation: fall 3.5s linear forwards;
 }
 
 @keyframes fall {
-to {
-transform:translateY(110vh) rotate(720deg);
-opacity:0;
-}
-}
-
-/* Birthday music player */
-
-.music-box {
-width:min(420px,100%);
-margin:25px auto;
-padding:22px;
-border-radius:22px;
-background:#fff9f4;
-border:1px solid #f2dce3;
-box-shadow:0 8px 25px #762b4910;
-text-align:center;
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0.1;
+    }
 }
 
-.music-icon {
-font-size:32px;
-margin-bottom:8px;
-}
+/* MOBILE */
 
-.music-box h3 {
-font-size:22px;
-font-weight:normal;
-margin:8px 0;
-}
+@media (max-width: 760px) {
 
-.music-box p {
-font-size:13px;
-color:#a46d7f;
-margin:5px 0 15px;
-}
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
 
-.music-box audio {
-width:100%;
-height:42px;
-}
+    section {
+        padding: 48px 16px;
+    }
 
-.music-note {
-font-size:12px;
-color:#a46d7f;
-margin-top:12px;
-}
+    .hero {
+        min-height: 85vh;
+    }
 
-@media(max-width:480px) {
-.memory img { height:310px; }
-.cake-area { padding:28px 10px; }
+    .letter-card {
+        padding: 25px;
+    }
 }
 </style>
 </head>
@@ -414,469 +313,425 @@ margin-top:12px;
 
 <!-- PASSWORD SCREEN -->
 
-<div id="lockscreen">
+<div id="lockScreen">
 
-<span class="float-heart" style="left:8%;animation-delay:0s">♥</span>
-<span class="float-heart" style="left:25%;animation-delay:3s">♡</span>
-<span class="float-heart" style="left:72%;animation-delay:1s">♥</span>
-<span class="float-heart" style="left:90%;animation-delay:4s">♡</span>
+    <div class="lock-card">
 
-<div class="lock-card">
+        <div style="font-size:3rem;">💌</div>
 
-<div class="lock-icon">🔐</div>
+        <h1>A little surprise<br>for you, Krish</h1>
 
-<p class="kicker">A secret surprise awaits</p>
+        <p>
+            Enter our special password to unlock
+            your birthday surprise ❤️
+        </p>
 
-<h1>For Krish <span style="color:#df7895">♥</span></h1>
+        <form id="unlockForm">
 
-<p>
-My Baby, a little world made just for you.<br>
-But first, you need the secret key. 💌
-</p>
+            <input
+                id="password"
+                type="password"
+                placeholder="Our special password"
+                autocomplete="off"
+                required
+            >
 
-<form id="unlock-form">
+            <button class="primary" type="submit">
+                Unlock my surprise ✨
+            </button>
 
-<input
-id="password"
-type="password"
-placeholder="Enter the secret password"
-aria-label="Secret password"
-autocomplete="off"
-required
->
+        </form>
 
-<button class="btn" type="submit">
-Unlock My Surprise ♡
-</button>
+        <div id="error"></div>
 
-</form>
+        <small>Hint: three little words 💗</small>
 
-<p id="feedback" aria-live="polite"></p>
-
-<small style="color:#ad7184">
-A little hint: three little words 💗
-</small>
+    </div>
 
 </div>
-</div>
+
+<!-- BIRTHDAY MUSIC -->
+<!-- Put birthday-tune.mp3 in the same folder as index.html -->
+
+<audio id="birthdayMusic" loop preload="auto">
+    <source src="birthday-tune.mp3" type="audio/mpeg">
+</audio>
 
 <!-- MAIN WEBSITE -->
 
-<div id="site" class="hidden">
+<main id="birthdaySite">
 
-<header class="hero">
+    <!-- MUSIC BUTTON -->
 
-<div class="big-heart">♥ ♡ ♥</div>
+    <button
+        id="musicButton"
+        class="music-control"
+        type="button"
+    >
+        ♫ Music on
+    </button>
 
-<p class="tag">Today is all about you</p>
+    <!-- HERO -->
 
-<h1>
-Happy 21st Birthday,<br>
-Krish!
-</h1>
+    <header class="hero">
 
-<p>
-To my Baby, my favourite person, and the boy who makes
-my world a little more beautiful. Today, this little
-surprise is all yours. 💗
-</p>
+        <div class="hero-content">
 
-<a class="btn" href="#music">
-Your birthday surprise ↓
-</a>
+            <div class="eyebrow">
+                A day made just for you ✨
+            </div>
 
-<p class="sparkle">✧ ✦ ✧</p>
+            <h1>
+                Happy Birthday,<br>
+                <span>Krish</span>
+                <span class="heart">❤️</span>
+            </h1>
 
-</header>
+            <p>
+                To my favorite person, my safest place,
+                and the one who makes ordinary days special.
+            </p>
 
-<!-- BIRTHDAY MUSIC -->
+            <button
+                class="primary"
+                id="startButton"
+                type="button"
+            >
+                Let's celebrate 🎂
+            </button>
 
-<section id="music">
+        </div>
 
-<div class="heading">
+    </header>
 
-<p class="tag">A little song for you</p>
+    <!-- BIRTHDAY WISH -->
 
-<h2>Your Birthday Song 🎵</h2>
+    <section id="birthday">
 
-<p class="soft">
-Because today deserves its own soundtrack, Baby. ❤️
-</p>
+        <div class="section-inner cake-wrap">
 
-</div>
+            <h2 class="section-title">
+                Make a birthday wish 🎂
+            </h2>
 
-<div class="music-box">
+            <p class="section-subtitle">
+                Close your eyes, make a wish,
+                and tap the cake.
+            </p>
 
-<div class="music-icon">🎂🎶</div>
+            <div class="cake">
+                🎂
+            </div>
 
-<h3>Happy Birthday, Krish</h3>
+            <button
+                class="primary"
+                id="wishButton"
+                type="button"
+            >
+                I made a wish 💖
+            </button>
 
-<p>A special song for my favourite person 💗</p>
+            <p
+                class="wish"
+                id="wishMessage"
+            ></p>
 
-<audio
-id="birthday-song"
-controls
-preload="metadata"
->
-<source src="birthday-song.mp3" type="audio/mpeg">
-Your browser does not support audio playback.
-</audio>
+        </div>
 
-<div class="music-note">
-Made with love, just for you ♥
-</div>
+    </section>
 
-</div>
+    <!-- PHOTO GALLERY -->
 
-</section>
+    <section id="memories">
 
-<!-- BIRTHDAY CAKE -->
+        <div class="section-inner">
 
-<section id="cake">
+            <h2 class="section-title">
+                Our little memories 📸
+            </h2>
 
-<div class="heading">
+            <p class="section-subtitle">
+                Every picture holds a moment I never
+                want to forget. Replace these photos
+                with your own pictures.
+            </p>
 
-<p class="tag">Make a wish, birthday boy</p>
+            <div class="gallery">
 
-<h2>A cake made with love 🎂</h2>
+                <figure class="photo">
+                    <img src="photos/photo1.jpg" alt="Our memory 1">
+                    <figcaption>My favorite moments 💗</figcaption>
+                </figure>
 
-<p class="soft">
-Twenty-one looks beautiful on you, Baby.
-</p>
+                <figure class="photo">
+                    <img src="photos/photo2.jpg" alt="Our memory 2">
+                    <figcaption>Just us ✨</figcaption>
+                </figure>
 
-</div>
+                <figure class="photo">
+                    <img src="photos/photo3.jpg" alt="Our memory 3">
+                    <figcaption>Always smiling 😊</figcaption>
+                </figure>
 
-<div class="cake-area">
+                <figure class="photo">
+                    <img src="photos/photo4.jpg" alt="Our memory 4">
+                    <figcaption>My happy place 🫶</figcaption>
+                </figure>
 
-<div class="cake" aria-label="A pink birthday cake with a candle">
+                <figure class="photo">
+                    <img src="photos/photo5.jpg" alt="Our memory 5">
+                    <figcaption>Little adventures 🌷</figcaption>
+                </figure>
 
-<div class="candle">
-<div class="flame" id="flame"></div>
-</div>
+                <figure class="photo">
+                    <img src="photos/photo6.jpg" alt="Our memory 6">
+                    <figcaption>Unforgettable days 💫</figcaption>
+                </figure>
 
-<div class="layer layer-top"></div>
-<div class="icing"></div>
-<div class="layer layer-mid"></div>
-<div class="layer layer-bottom"></div>
+                <figure class="photo">
+                    <img src="photos/photo7.jpg" alt="Our memory 7">
+                    <figcaption>My person ❤️</figcaption>
+                </figure>
 
-<div class="cake-heart">♥</div>
+                <figure class="photo">
+                    <img src="photos/photo8.jpg" alt="Our memory 8">
+                    <figcaption>More memories to come 🥹</figcaption>
+                </figure>
 
-</div>
+            </div>
 
-<h2>21 Wishes for My Favourite Boy</h2>
+        </div>
 
-<p id="birthday-message">
-Close your eyes, make a wish, and tap below. ✨
-</p>
+    </section>
 
-<button class="btn cake-cut" id="wish-btn">
-Make a Wish ✨
-</button>
+    <!-- LOVE LETTER -->
 
-</div>
+    <section id="letter">
 
-</section>
+        <div class="section-inner">
 
-<!-- MEMORIES -->
+            <h2 class="section-title">
+                A little letter for you 💌
+            </h2>
 
-<section id="memories">
+            <p class="section-subtitle">
+                From my heart, to yours.
+            </p>
 
-<div class="heading">
+            <div class="letter-card">
 
-<p class="tag">A scrapbook of us</p>
+Happy birthday, my love ❤️
 
-<h2>Our Memories 📸</h2>
+I hope this year brings you all the happiness,
+success, peace, and love you deserve.
 
-<p class="soft">
-Eight little pieces of our story, and a million
-feelings behind them.
-</p>
+Thank you for being you, for making me laugh,
+for listening to me, and for making so many
+little moments mean so much.
 
-</div>
+I'm so proud of you and excited for everything
+waiting for you.
 
-<div class="gallery">
+No matter how busy life gets, I hope you
+always remember how special you are to me.
 
-<article class="memory">
+Keep smiling, keep dreaming big, and never
+forget that I'm cheering for you every step
+of the way.
 
-<img src="photos/photo1.jpg" alt="Our childhood memory" loading="lazy">
+I love you so much.
 
-<div class="caption">
-<small>MEMORY NO. 01</small>
-My favourite person in the whole world. ❤️
-</div>
+Happy birthday, Krish. 🎂💗
 
-</article>
+            </div>
 
-<article class="memory">
+        </div>
 
-<img src="photos/photo2.jpg" alt="A sweet memory of us" loading="lazy">
+    </section>
 
-<div class="caption">
-<small>MEMORY NO. 02</small>
-Some moments deserve to last forever.
-</div>
+    <!-- FOOTER -->
 
-</article>
+    <footer>
+        Made with all my love, just for you 💗
+    </footer>
 
-<article class="memory">
-
-<img src="photos/photo3.jpg" alt="A happy moment together" loading="lazy">
-
-<div class="caption">
-<small>MEMORY NO. 03</small>
-Your smile is my favourite view.
-</div>
-
-</article>
-
-<article class="memory">
-
-<img src="photos/photo4.jpg" alt="A lovely memory together" loading="lazy">
-
-<div class="caption">
-<small>MEMORY NO. 04</small>
-I'd choose this moment again and again.
-</div>
-
-</article>
-
-<article class="memory">
-
-<img src="photos/photo5.jpg" alt="A cherished moment together" loading="lazy">
-
-<div class="caption">
-<small>MEMORY NO. 05</small>
-With you, even ordinary days feel magical.
-</div>
-
-</article>
-
-<article class="memory">
-
-<img src="photos/photo6.jpg" alt="A precious moment together" loading="lazy">
-
-<div class="caption">
-<small>MEMORY NO. 06</small>
-You make my heart feel at home.
-</div>
-
-</article>
-
-<article class="memory">
-
-<img src="photos/photo7.jpg" alt="A beautiful memory together" loading="lazy">
-
-<div class="caption">
-<small>MEMORY NO. 07</small>
-My kind of happiness has your face.
-</div>
-
-</article>
-
-<article class="memory">
-
-<img src="photos/photo8.jpg" alt="One more memory to treasure" loading="lazy">
-
-<div class="caption">
-<small>MEMORY NO. 08</small>
-Our story is my favourite story. 💗
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-<!-- LOVE LETTER -->
-
-<section id="letter">
-
-<div class="letter">
-
-<div style="font-size:40px">💌</div>
-
-<p class="tag">Open when you need a little love</p>
-
-<h2>A Letter for My Baby</h2>
-
-Happy 21st birthday, my Krish! ❤️
-
-Baby, I hope this new chapter brings you happiness,
-peace, success, and all the beautiful things you deserve.
-
-Thank you for being a special part of my life.
-Every laugh, every little moment, every memory we make
-means more to me than words can explain.
-
-I hope all your dreams find their way to you.
-I hope you always have reasons to smile, and I hope
-we keep collecting little moments to look back on.
-
-Today is about celebrating YOU — the person you are,
-the person you're becoming, and all the wonderful
-things still waiting for you.
-
-Happy birthday, Baby.
-You are loved more than you know. 💗
-
-<div style="font-size:24px;margin-top:20px">
-Forever sending you hugs & kisses. ♥
-</div>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-<strong>Happy 21st Birthday, Krish! 🎂</strong>
-
-<p>May this year be as wonderful as your heart.</p>
-
-<p>Made with all my love, just for you, Baby. 💕</p>
-
-<a class="btn" href="#site">
-Back to the beginning ↑
-</a>
-
-</footer>
-
-</div>
+</main>
 
 <!-- JAVASCRIPT -->
 
 <script>
 
-const form = document.getElementById('unlock-form');
+// PASSWORD
 
-const passwordInput = document.getElementById('password');
+const PASSWORD = "iloveyou";
 
-const feedback = document.getElementById('feedback');
+const lockScreen = document.getElementById("lockScreen");
 
-const birthdaySong = document.getElementById('birthday-song');
+const birthdaySite = document.getElementById("birthdaySite");
+
+const passwordInput = document.getElementById("password");
+
+const errorMessage = document.getElementById("error");
+
+const music = document.getElementById("birthdayMusic");
+
+const musicButton = document.getElementById("musicButton");
 
 
-// PASSWORD UNLOCK
+// UNLOCK WEBSITE
 
-form.addEventListener('submit', function(event) {
+document.getElementById("unlockForm")
+.addEventListener("submit", async function(event) {
 
-event.preventDefault();
+    event.preventDefault();
 
-if(passwordInput.value.trim().toLowerCase() === 'iloveyou') {
+    const enteredPassword =
+        passwordInput.value.trim().toLowerCase();
 
-document.getElementById('lockscreen').classList.add('hidden');
+    if (enteredPassword !== PASSWORD) {
 
-document.getElementById('site').classList.remove('hidden');
+        errorMessage.textContent =
+            "Oops, that's not it 💗 Try again!";
 
-window.scrollTo(0,0);
+        passwordInput.value = "";
 
-celebrate();
+        passwordInput.focus();
 
-// Play birthday song after unlocking
-birthdaySong.play().catch(function() {
+        return;
+    }
 
-// If autoplay is blocked, the music player
-// remains available for manual playback.
+    // Hide password screen
 
-console.log('Tap the music player to play your song.');
+    lockScreen.style.display = "none";
+
+    birthdaySite.classList.add("show");
+
+    document.body.style.overflow = "auto";
+
+    // Start birthday music
+
+    try {
+
+        await music.play();
+
+        musicButton.textContent = "♫ Music on";
+
+    } catch (error) {
+
+        musicButton.textContent = "♫ Tap for music";
+
+    }
+
+    // Birthday confetti
+
+    launchConfetti(70);
 
 });
 
-} else {
 
-feedback.textContent = 'Oops, Baby! Try again, my love. 💗';
+// MUSIC BUTTON
 
-passwordInput.value = '';
+musicButton.addEventListener("click", async function() {
 
-passwordInput.focus();
+    if (music.paused) {
 
-}
+        try {
+
+            await music.play();
+
+            musicButton.textContent = "♫ Music on";
+
+        } catch (error) {
+
+            musicButton.textContent = "♫ Music unavailable";
+
+        }
+
+    } else {
+
+        music.pause();
+
+        musicButton.textContent = "♫ Music off";
+
+    }
 
 });
 
 
-// BIRTHDAY WISHES
+// CELEBRATION BUTTON
 
-const wishes = [
+document.getElementById("startButton")
+.addEventListener("click", function() {
 
-'May all your biggest dreams come true. ✨',
+    document.getElementById("birthday")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
 
-'May happiness find you every single day. 💗',
+    launchConfetti(35);
 
-'May your heart always feel loved. ❤️',
-
-'May this year bring you beautiful adventures. 🌹',
-
-'And may we make many more memories together. 💕'
-
-];
-
-let wishIndex = 0;
+});
 
 
-document.getElementById('wish-btn').addEventListener('click',function() {
+// BIRTHDAY WISH BUTTON
 
-document.getElementById('flame').style.display = 'none';
+document.getElementById("wishButton")
+.addEventListener("click", function() {
 
-document.getElementById('birthday-message').textContent =
-wishes[wishIndex % wishes.length];
+    document.getElementById("wishMessage")
+    .textContent =
+        "May all your dreams come true, my love. " +
+        "You deserve the whole universe and more. " +
+        "I love you, Krish! ❤️✨";
 
-wishIndex++;
-
-this.textContent =
-wishIndex >= wishes.length
-? 'Make Another Wish ✨'
-: 'One More Wish 💗';
-
-if(wishIndex % wishes.length === 0) {
-
-document.getElementById('flame').style.display = 'block';
-
-}
-
-celebrate();
+    launchConfetti(100);
 
 });
 
 
 // CONFETTI ANIMATION
 
-function celebrate() {
+function launchConfetti(amount) {
 
-const symbols = ['♥','♡','✨','💕','✦'];
+    const colors = [
+        "#ff4f87",
+        "#ffc1d8",
+        "#f6c453",
+        "#a8e6cf",
+        "#b9a7ff",
+        "#ffffff"
+    ];
 
-for(let i = 0; i < 32; i++) {
+    for (let i = 0; i < amount; i++) {
 
-const item = document.createElement('span');
+        const piece = document.createElement("span");
 
-item.className = 'confetti';
+        piece.className = "confetti";
 
-item.textContent =
-symbols[Math.floor(Math.random()*symbols.length)];
+        piece.style.left =
+            Math.random() * 100 + "vw";
 
-item.style.left = Math.random()*100+'vw';
+        piece.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
 
-item.style.fontSize =
-(14+Math.random()*20)+'px';
+        piece.style.animationDelay =
+            Math.random() * 1.2 + "s";
 
-item.style.color =
-['#d9577c','#762b49','#d8ad68','#f09bb4'][i%4];
+        piece.style.animationDuration =
+            2.5 + Math.random() * 2 + "s";
 
-item.style.animationDelay =
-Math.random()*1.2+'s';
+        piece.style.transform =
+            "rotate(" + Math.random() * 360 + "deg)";
 
-document.body.appendChild(item);
+        document.body.appendChild(piece);
 
-setTimeout(function() {
+        setTimeout(function() {
 
-item.remove();
+            piece.remove();
 
-},5500);
+        }, 5000);
 
-}
+    }
 
 }
 
